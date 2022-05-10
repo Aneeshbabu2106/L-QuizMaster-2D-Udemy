@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
@@ -8,8 +6,8 @@ public class Timer : MonoBehaviour
     [SerializeField] float timeToShowAns = 10f;
     public bool isAnswering =true;
     float timeValue;
-    private bool loadNextQue;
-    float fillFraction;
+    public bool loadNextQue;
+    public float fillFraction;
 
     void Update()
     {
@@ -21,7 +19,6 @@ public class Timer : MonoBehaviour
     }
     void UpdateTime()
     {
-        Debug.Log(timeValue);
         timeValue -= Time.deltaTime;
 
         if(isAnswering)
