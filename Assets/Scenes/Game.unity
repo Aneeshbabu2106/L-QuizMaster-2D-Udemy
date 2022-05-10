@@ -1154,7 +1154,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quesText: {fileID: 1725110896}
-  question: {fileID: 11400000, guid: 62f8c0496bcbbf544b1c9680ef53bd30, type: 2}
+  questions:
+  - {fileID: 11400000, guid: 62f8c0496bcbbf544b1c9680ef53bd30, type: 2}
+  - {fileID: 11400000, guid: fdd2264c29510f443ab31e3d13aadfeb, type: 2}
+  - {fileID: 11400000, guid: e840cda7b6deeea4abf5062e51463f25, type: 2}
+  - {fileID: 11400000, guid: b688da0d2293c5b4db43ebeb1d5eee4d, type: 2}
   answerButton:
   - {fileID: 1138628534}
   - {fileID: 996040001}
@@ -1162,6 +1166,7 @@ MonoBehaviour:
   - {fileID: 411259236}
   defaultSprite: {fileID: 21300000, guid: ce4e2608a013e4d40a24dc342766776b, type: 3}
   correctAnswerSprite: {fileID: 21300000, guid: c769a62267963de4384065ae8f49a7f6, type: 3}
+  timerImage: {fileID: 1682438296}
 --- !u!114 &669789040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1174,9 +1179,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b27ecdb80f55db4483dc58e265956e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToCompleteQue: 30
-  timeToShowAns: 10
+  timeToCompleteQue: 10
+  timeToShowAns: 5
   isAnswering: 0
+  loadNextQue: 0
+  fillFraction: 0
 --- !u!1001 &942955611
 PrefabInstance:
   m_ObjectHideFlags: 0

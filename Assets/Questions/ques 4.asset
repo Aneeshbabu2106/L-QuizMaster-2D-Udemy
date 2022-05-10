@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a722438c3a1c9f47b936d704ed38d5f, type: 3}
   m_Name: ques 4
   m_EditorClassIdentifier: 
-  Questions: Enter new Questions
+  questions: My Hobby
+  answers:
+  - Reading
+  - Travelling
+  - Gaming
+  - Cooking
+  correctAnswer: 2

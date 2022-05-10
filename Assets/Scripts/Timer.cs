@@ -4,9 +4,9 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] float timeToCompleteQue =30f;
     [SerializeField] float timeToShowAns = 10f;
-    public bool isAnswering =true;
+    public bool isAnswering = true;
     float timeValue;
-    public bool loadNextQue;
+    public bool loadNextQue = true;
     public float fillFraction;
 
     void Update()
