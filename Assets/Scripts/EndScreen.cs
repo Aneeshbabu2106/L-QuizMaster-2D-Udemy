@@ -12,7 +12,7 @@ public class EndScreen : MonoBehaviour
     {
         scoreKeeper = FindObjectOfType<Scorekeeper>();
     }
-    private void Update()
+    public void FinalScore()
     {
         scoreText.text = "Congratulations!\n You Score " + scoreKeeper.CalculatePercentage() + "%";
     }
