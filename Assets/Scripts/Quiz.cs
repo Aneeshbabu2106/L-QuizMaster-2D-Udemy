@@ -24,11 +24,16 @@ public class Quiz : MonoBehaviour
     [Header("Timers")]
     [SerializeField] Image timerImage;
     Timer timer;
-    
+
+    [Header("Scoring")]
+    [SerializeField] TextMeshProUGUI scoreText;
+    Scorekeeper scoreKeeper;
+
 
     void Start()
     {
         timer = FindObjectOfType<Timer>();
+        scoreKeeper = FindObjectOfType<Scorekeeper>();
         currentQuestion = questions[0];
         //DisplayQuestion();
     }
@@ -44,13 +49,14 @@ public class Quiz : MonoBehaviour
         }
         else if (!hasAnsweredEarly && !timer.isAnswering)
         {
-            DisplayAnswers(-10);
+            DisplayAnswers(-1);
             SetButtonState(false);
 
         }
     }
     void DisplayQuestion()
     {
+
         if (questions.Count > 0)
         {
             
@@ -64,6 +70,7 @@ public class Quiz : MonoBehaviour
             
             SetButtonState(true);
             SetDefaultImage();
+            scoreKeeper.SetQuesSeen();
         }
     }
 
@@ -97,6 +104,7 @@ public class Quiz : MonoBehaviour
         DisplayAnswers(index);
         SetButtonState(false);
         timer.CancelTimer();
+        scoreText.text = "Score: " + scoreKeeper.CalculatePercentage() + "%";
     }
 
     void DisplayAnswers(int index)
@@ -107,6 +115,7 @@ public class Quiz : MonoBehaviour
             quesText.text = "Correct!";
             buttonImage = answerButton[index].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
+            scoreKeeper.SetCorrectAns();
         }
         else
         {
@@ -114,6 +123,7 @@ public class Quiz : MonoBehaviour
             string correctAnswer = currentQuestion.GetAnswers(correctAnswerIndex);
             quesText.text = "Sorry, the correct answer was;\n" + correctAnswer;
             buttonImage = answerButton[correctAnswerIndex].GetComponent<Image>();
+            buttonImage.sprite = correctAnswerSprite;
         }
     }
 }
